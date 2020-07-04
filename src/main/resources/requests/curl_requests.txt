@@ -1,34 +1,43 @@
-
-## INIT
-
+# INIT \
 curl  -s -w '\n\nTotal: %{time_total}s\n' \
     -X POST -d @"./src/main/resources/requests/admin_init.json" \
     -H "Content-Type: application/json" \
     localhost:8080/api/v1/admin/init
 
-
-
-## BALANCE
-
+# BALANCE \
 curl  -s -w '\n\nTotal: %{time_total}s\n' \
     -X POST -d @"./src/main/resources/requests/balance.json" \
     -H "Content-Type: application/json" \
     localhost:8080/api/v1/balance
 
-
-
-## TRANSFER
-
+# TRANSFER \
 curl  -s -w '\n\nTotal: %{time_total}s\n' \
     -X POST -d @"./src/main/resources/requests/transfer.json" \
     -H "Content-Type: application/json" \
     localhost:8080/api/v1/transfer
 
-
-
-## CREATE
-
+# CREATE \
 curl  -s -w '\n\nTotal: %{time_total}s\n' \
     -X POST -d @"./src/main/resources/requests/create.json" \
     -H "Content-Type: application/json" \
     localhost:8080/api/v1/create
+
+
+
+
+
+
+# BALANCE \
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"accId": 100}' \
+    http://simplebank.stasmarkin.ru:8080/api/v1/balance
+
+# TRANSFER \
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"senderId": 100, "recipientId": 101, "amount": 10}' \
+    http://simplebank.stasmarkin.ru:8080/api/v1/transfer
+
+# CREATE \
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"accId": 7777777, "amount": 50000000}' \
+    http://simplebank.stasmarkin.ru:8080/api/v1/create

@@ -1,21 +1,21 @@
 {
-  "address": "localhost",
+  "address": "simplebank.stasmarkin.ru",
   "port": 8080,
   "concurrency": 160,
 
   "init" : {
-    "reinit": true,
+    "reinit": false,
     "initAmount": 100000
   },
 
-  "dbSize": 10000,
+  "dbSize": 100000,
   "scenarios": {
-    "balance": 0,
+    "balance": 80,
     "balanceMissed": 0,
-    "transferRnd2rnd": 0,
-    "transferRnd2one": 1,
+    "transferRnd2rnd": 15,
+    "transferRnd2one": 0,
     "transferRnd2none": 0,
-    "create": 0,
+    "create": 5,
     "createDuplicate": 0
   }
 }
