@@ -1,7 +1,7 @@
 # Basic banking service
 
 
-# Table of contents
+## Table of contents
 1. [Purpose](#purpose)
 2. [Build & Run](#buildnrun)
 3. [API](#api)
