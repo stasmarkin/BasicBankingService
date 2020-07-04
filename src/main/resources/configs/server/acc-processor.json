@@ -1,0 +1,6 @@
+{
+  "poolSize":  8,
+  "balanceQueueSize": 200,
+  "transferQueueSize":  200,
+  "createQueueSize": 200
+}

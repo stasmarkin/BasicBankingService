@@ -1,0 +1,15 @@
+{
+  "host": "localhost",
+  "port": 3306,
+  "database": "db",
+  "username": "user",
+  "password": "password",
+  "maxActiveConnections": 36,
+  "maxIdleTime": 60000,
+  "maxPendingQueries": 2000,
+  "connectionValidationInterval": 5000,
+  "connectionCreateTimeout": 5000,
+  "connectionTestTimeout": 5000,
+  "queryTimeout": 5000,
+  "maximumMessageSize": 16777216
+}

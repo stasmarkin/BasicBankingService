@@ -1,0 +1,21 @@
+{
+  "address": "localhost",
+  "port": 8080,
+  "concurrency": 160,
+
+  "init" : {
+    "reinit": true,
+    "initAmount": 100000
+  },
+
+  "dbSize": 10000,
+  "scenarios": {
+    "balance": 0,
+    "balanceMissed": 0,
+    "transferRnd2rnd": 0,
+    "transferRnd2one": 1,
+    "transferRnd2none": 0,
+    "create": 0,
+    "createDuplicate": 0
+  }
+}
