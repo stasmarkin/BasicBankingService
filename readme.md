@@ -1,6 +1,18 @@
 # Basic banking service
 
-## Purpose
+
+# Table of contents
+1. [Purpose](#purpose)
+2. [Build & Run](#buildnrun)
+3. [API](#api)
+   1. [POST /api/v1/balance](#api.balance)
+   1. [POST /api/v1/transfer](#api.transfer)
+   1. [POST /api/v1/create](#api.create)
+   1. [POST /api/v1/admin/init](#api.init)
+4. [Stress Client](#stressclient)
+
+
+## Purpose <a name="purpose"></a>
 
 _(this is a interview task)_
 
@@ -11,7 +23,7 @@ Provides simple REST API for basic banking operations:
 
 server app is not supposed to run parallel instances in front of single DB
 
-## Build & Run
+## Build & Run <a name="buildnrun"></a>
 
 You will require java8+, gradle6+, MYSQL 5.8
 
@@ -26,9 +38,9 @@ java -jar SimpleBank-all-x.x.jar
 ```
 
 
-## API
+## API <a name="api"></a>
 
-### POST /api/v1/balance
+### POST /api/v1/balance <a name="api.balance"></a>
 ***Checks balance for $xxx account***
 
 HEADER: Content-Type: application/json  
@@ -46,7 +58,7 @@ returns 503 response code with OVERLOADED description in body, if service is ove
 returns 500 response code without body in case of other errors
 
 
-### POST /api/v1/transfer
+### POST /api/v1/transfer <a name="api.transfer"></a>
 ***Transfers $zzz amount from $xxx account to $yyy***
 
 HEADER: Content-Type: application/json  
@@ -70,7 +82,7 @@ returns 503 response code with OVERLOADED description in body, if service is ove
 returns 500 response code without body in case of other errors  
 
 
-### POST /api/v1/create
+### POST /api/v1/create <a name="api.create"></a>
 ***Create account with $xxx id and $zzz amount***
 
 HEADER: Content-Type: application/json  
@@ -91,7 +103,7 @@ returns 503 response code with OVERLOADED description in body, if service is ove
 returns 500 response code without body in case of other errors  
 
 
-### POST /api/v1/admin/init
+### POST /api/v1/admin/init <a name="api.init"></a>
 ***Deletes all accounts and creates new ones with id from 1 to $xxx (inclusive) with $zzz amount***
 
 HEADER: Content-Type: application/json  
@@ -109,7 +121,7 @@ returns 200 response code with "OK" in body, if succeed
 returns 500 response code without body in other cases
 
 
-## Stress Client
+## Stress Client <a name="stressclient"></a>
 
 Bombs given server with meaningful load.
 
