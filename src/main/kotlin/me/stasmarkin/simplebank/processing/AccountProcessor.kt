@@ -219,11 +219,8 @@ class AccountProcessor(
                         if (sumCauseOverflow(recipientBal, amount))
                             return@thenCompose completedFuture(TransferResponse.wrongAmount())
 
-                        val senderUpd = dao.updateBalance(senderId, senderBal, senderBal - amount)
-                        val recipientUpd = dao.updateBalance(recipientId, recipientBal, recipientBal + amount)
-
-                        return@thenCompose senderUpd
-                            .runAfterBoth(recipientUpd) { Unit }
+                        return@thenCompose dao.updateBalance(senderId, senderBal, senderBal - amount)
+                            .thenCompose { dao.updateBalance(recipientId, recipientBal, recipientBal + amount) }
                             .thenApply {
                                 TransferResponse.success(senderBal - amount, recipientBal + amount)
                             }
