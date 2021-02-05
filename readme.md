@@ -23,6 +23,8 @@ Provides simple REST API for basic banking operations:
 
 server app is not supposed to run parallel instances in front of single DB
 
+see PreProdOverview.txt for functional and stress testing, throughput, performance on further improvements   
+
 ## Build & Run <a name="buildnrun"></a>
 
 You will require java8+, gradle6+, MYSQL 5.8
